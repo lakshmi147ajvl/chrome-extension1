@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Billables AI - Chrome Extension Installer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #eaf2fb 0%, #f5f8fa 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(35,86,160,0.15);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border: 3px solid #2356A0;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #2356A0;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD600;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #2356A0;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            letter-spacing: 0.02em;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .features h3 {
+            color: #2356A0;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            color: #333;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #FFD600;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+        
+        .install-btn {
+            background: #2356A0;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(35,86,160,0.3);
+        }
+        
+        .install-btn:hover {
+            background: #FFD600;
+            color: #2356A0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(35,86,160,0.4);
+        }
+        
+        .instructions {
+            background: #fffbe6;
+            border: 2px solid #FFD600;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #2356A0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            color: #333;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        
+        .code {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #2356A0;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">⚖️</div>
+        <h1>Legal Billables AI</h1>
+        <p class="subtitle">Automate legal billing with Gmail and Clio integration</p>
+        
+        <div class="features">
+            <h3>✨ Key Features</h3>
+            <ul>
+                <li>Track typing time in Gmail compose windows</li>
+                <li>Generate AI summaries of email content</li>
+                <li>Automatically log time entries to Clio</li>
+                <li>Professional Clio-branded interface</li>
+                <li>Secure OAuth2 authentication</li>
+            </ul>
+        </div>
+        
+        <button class="install-btn" onclick="downloadExtension()">
+            📥 Download Extension
+        </button>
+        
+        <div class="instructions">
+            <h3>📋 Installation Instructions</h3>
+            <ol>
+                <li>Click "Download Extension" above to get the ZIP file</li>
+                <li>Extract the ZIP file to a folder on your computer</li>
+                <li>Open Chrome and go to <span class="code">chrome://extensions/</span></li>
+                <li>Enable "Developer mode" (toggle in top right corner)</li>
+                <li>Click "Load unpacked" and select the extracted folder</li>
+                <li>The extension will appear in your Chrome toolbar</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>🔒 Secure • 🚀 Fast • 💼 Professional</p>
+            <p>Compatible with Gmail and Clio</p>
+        </div>
+    </div>
+
+    <script>
+        function downloadExtension() {
+            // Create a download link for the extension ZIP
+            const link = document.createElement('a');
+            link.href = './legal-billables-ai-extension.zip';
+            link.download = 'legal-billables-ai-extension.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success message
+            alert('✅ Extension downloaded successfully!\n\nPlease follow the installation instructions below.');
+        }
+    </script>
+</body>
+</html> 
